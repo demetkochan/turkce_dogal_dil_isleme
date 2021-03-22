@@ -26,7 +26,7 @@ def logistic_regression(x_train, x_test, y_train, y_test):
     logistic_reg = log_reg.fit(x_train, y_train)
     log_reg_cv_score = cross_val_score(logistic_reg, x_test, y_test, cv=10)
     print(log_reg_cv_score.mean())
-    pickle.dump(logistic_reg, open('logistic_reg_count_vec_model.sav', 'wb'))
+    pickle.dump(logistic_reg, open('logistic_reg_model.sav', 'wb'))
     print(log_reg_cv_score)
     return (log_reg)
 
