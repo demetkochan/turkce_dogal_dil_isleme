@@ -7,7 +7,7 @@ load_vec = joblib.load("tfidf_vectorize.sav")
 lr_model = joblib.load("logistic_reg_model.sav")
 
 
-@app.route('/categorization', methods=['GET', 'POST'])
+@app.route('/categorize', methods=['GET', 'POST'])
 def get_prediction():
     text = request.json.get('text')
     vec = load_vec.transform([text])
