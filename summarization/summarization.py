@@ -4,18 +4,16 @@ import nltk
 from nltk import sent_tokenize, word_tokenize
 import heapq
 
-df = pd.read_csv("../Dataset/haberler.csv")
-df['lowercase'] = df['HABERMETNI'].apply(lambda x: x.lower())
 
+
+df = pd.read_csv("../Dataset/haberler.csv", decoding='utf8', engine='python')
+df['lowercase'] = df['HABERMETNI'].apply(lambda x: x.lower())
 
 def remove_number(text):
     text = re.sub(r'[0-9]+', '', text)
     return text
 
-
 df['removed_num'] = df['lowercase'].apply(lambda x: remove_number(x))
-
-haber = df['removed_num'].tolist()
 
 stopwords = nltk.corpus.stopwords.words('turkish')
 
@@ -46,3 +44,6 @@ summary_sentences = heapq.nlargest(1, sentence_scores, key=sentence_scores.get)
 
 summary = ' '.join(summary_sentences)
 print(summary)
+
+
+

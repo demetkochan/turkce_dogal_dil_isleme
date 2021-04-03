@@ -1,5 +1,6 @@
 Flask
 numpy
-scikit-learn
-joblib
+nltk
 pandas
+heapq
+re
