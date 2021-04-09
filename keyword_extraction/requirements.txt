@@ -1,5 +1,3 @@
 Flask
 nltk
 stop-words
-operator
-math
