@@ -3,6 +3,7 @@ from collections import OrderedDict
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
 
 model = AutoModelForTokenClassification.from_pretrained("savasy/bert-base-turkish-ner-cased")
 tokenizer = AutoTokenizer.from_pretrained("savasy/bert-base-turkish-ner-cased")
