@@ -1,0 +1,15 @@
+<html>
+<body>
+    <h1>Turkish NLP Web App !</h1>
+
+    <div>
+        <h2>Sentiment Analizi</h2>
+         <form action="{{ url_for('sentiment')}}" method="post">
+             <input type="text" name="input_text">
+             <input type="submit" value="Sentiment Analizi Yap!">
+        </form>
+    </div>
+
+
+</body>
+</html>
