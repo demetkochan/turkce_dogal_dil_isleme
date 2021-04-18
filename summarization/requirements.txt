@@ -1,6 +1,2 @@
 Flask
-numpy
 nltk
-pandas
-heapq
-re
