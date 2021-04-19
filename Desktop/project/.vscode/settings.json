@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.addBrackets": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.completeFunctionParens": true,
+    "python.pythonPath": "C:\\Anaconda3\\python.exe"
+    
+    
+}
