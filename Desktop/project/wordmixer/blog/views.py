@@ -56,9 +56,20 @@ def link1(request):
             uf = FileUpload(file = request.FILES['file'])
             uf.user = request.user
             uf.save()
-    else:
-        uf=UploadFileForm()
-    return render (request,'blog/links/Link1.html',{'uf': uf})
+            return redirect('/duyguanalizi')
+        else:
+            uf=UploadFileForm()
+        return render (request,'blog/links/Link1.html',{'uf': uf})
+
+    elif request.POST.get('submit') == 'Dene':
+        text = request.POST['text']
+        text = request.POST.get('text')
+        return redirect('/duyguanalizi')
+    else :
+        return render (request,'blog/links/Link1.html')
+
+
+
     
 def link2(request):
     return render (request,'blog/links/Link2.html')
