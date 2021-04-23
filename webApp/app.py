@@ -6,58 +6,63 @@ app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
 
-@app.route("/",methods=["GET"])
+@app.route("/", methods=["GET"])
 def home():
     return render_template("index.html")
 
+
 @app.route("/sentiment", methods=['POST'])
 def sentiment():
-    url =  "http://localhost:5000/sentiment"
+    url = "http://localhost:5000/sentiment"
     payload = {"text": request.form["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
 
     return render_template("index.html", response=response)
 
+
 @app.route("/kelimecikarma", methods=['POST'])
 def keywordExtraction():
-    url =  "http://localhost:5000/keyword"
-    payload = {"text": request.form["input_text"],"text": request.form["input_text"]}
+    url = "http://localhost:5000/keyword"
+    payload = {"text": request.form["input_text"], "text": request.form["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
 
     return jsonify(response)
+
 
 @app.route("/categorization", methods=['POST'])
 def categorization():
-    url =  "http://localhost:5000/categorization"
+    url = "http://localhost:3000/categorize"
     payload = {"text": request.form["input_text"]}
-    response = json.loads(requests.request("POST", url, json=payload).text)
+    response_cat = json.loads(requests.request("POST", url, json=payload).text)
 
-    return render_template("index_categorize",response=response)
+    return render_template("index.html", response_cat=response_cat)
+
 
 @app.route("/sorucevap", methods=['POST'])
 def questionAnswer():
-    url =  "http://localhost:5000/questionAns"
-    payload = {"text": request.form["input_text"],"text": request.form["input_text"]}
+    url = "http://localhost:5000/questionAns"
+    payload = {"text": request.form["input_text"], "text": request.form["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
 
     return jsonify(response)
+
 
 @app.route("/ozetleme", methods=['POST'])
 def summarization():
-    url =  "http://localhost:5000/summarization"
+    url = "http://localhost:5000/summarization"
     payload = {"text": request.form["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
 
     return jsonify(response)
+
 
 @app.route("/varliktanima", methods=['POST'])
 def ner():
-    url =  "http://localhost:5000/ner"
+    url = "http://localhost:5000/ner"
     payload = {"text": request.form["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
 
     return jsonify(response)
-
 
 
 if __name__ == "__main__":

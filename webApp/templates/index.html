@@ -7,7 +7,7 @@
          <form action="{{ url_for('sentiment')}}" method="post">
              <input type="text" name="input_text">
              <input type="submit" value="Sentiment Analizi Yap!">
-             <h3>Hello, {{ response }}!</h3>
+             <h3>Hello, {{ response }}</h3>
 
         </form>
 
@@ -18,6 +18,7 @@
          <form action="{{ url_for('categorization')}}" method="post">
              <input type="text" name="input_text">
              <input type="submit" value=" Konu Çıkarımı Yap!">
+             <h3>{{ response_cat }}</h3>
         </form>
     </div>
 
