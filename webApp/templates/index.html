@@ -11,9 +11,10 @@
 
         </form>
 
+
     </div>
 
-    <div>
+        <div>
         <h4>Konu çıkarımı</h4>
          <form action="{{ url_for('categorization')}}" method="post">
              <input type="text" name="input_text">
@@ -21,6 +22,8 @@
              <h3>{{ response_cat }}</h3>
         </form>
     </div>
+
+
 
 </body>
 </html>

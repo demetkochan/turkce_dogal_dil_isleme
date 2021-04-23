@@ -20,7 +20,7 @@ def sentiment():
     return render_template("index.html", response=response)
 
 
-@app.route("/kelimecikarma", methods=['POST'])
+@app.route("/kelimecikarma", methods=['GET','POST'])
 def keywordExtraction():
     url = "http://localhost:5000/keyword"
     payload = {"text": request.form["input_text"], "text": request.form["input_text"]}
@@ -29,19 +29,20 @@ def keywordExtraction():
     return jsonify(response)
 
 
-@app.route("/categorization", methods=['POST'])
+@app.route("/categorization", methods=['GET','POST'])
 def categorization():
     url = "http://localhost:3000/categorize"
     payload = {"text": request.form["input_text"]}
     response_cat = json.loads(requests.request("POST", url, json=payload).text)
 
-    return render_template("index.html", response_cat=response_cat)
+    return render_template("index_categorize.html", response_cat=response_cat)
 
 
 @app.route("/sorucevap", methods=['POST'])
 def questionAnswer():
     url = "http://localhost:5000/questionAns"
     payload = {"text": request.form["input_text"], "text": request.form["input_text"]}
+
     response = json.loads(requests.request("POST", url, json=payload).text)
 
     return jsonify(response)
