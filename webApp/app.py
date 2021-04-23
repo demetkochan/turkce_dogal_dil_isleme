@@ -16,7 +16,7 @@ def sentiment():
     payload = {"text": request.form["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
 
-    return render_template("index_new.html", response=response)
+    return render_template("index.html", response=response)
 
 @app.route("/kelimecikarma", methods=['POST'])
 def keywordExtraction():
