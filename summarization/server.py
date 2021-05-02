@@ -4,12 +4,12 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-nltk.download('punkt')
+
 
 @app.route('/summarization', methods=['GET', 'POST'])
 def get_prediction():
     text = request.json.get('text')
-
+    nltk.download('punkt')
     stopWords = set(stopwords.words("turkish"))
     words = word_tokenize(text)
     frequency = dict()
