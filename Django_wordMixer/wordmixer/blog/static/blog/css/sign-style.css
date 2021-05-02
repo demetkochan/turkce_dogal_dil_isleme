@@ -10,6 +10,9 @@ body,
 input {
   font-family: "Poppins", sans-serif;
 }
+.logo{
+  size: 50px;
+}
 
 .container {
   position: relative;
