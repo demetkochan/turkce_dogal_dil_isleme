@@ -89,9 +89,11 @@
                     <br>
                     <label >Sonuç </label>
                     <div class="outcome"> 
-                        {% if response %}
-                            <p><strong>{{ response }}</strong></p>
-                        {% endif %}
+                        <ul>
+                        {% for key in response.items %}
+                            <li><a "{{ key }}">{{key}}</a></li>
+                        {% endfor %}  
+                        </ul>
                     </div>
                 </div>
                 <div class = "item-2">
