@@ -10,7 +10,7 @@
         <script src="https://kit.fontawesome.com/64d58efce2.js"crossorigin="anonymous" ></script>
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="{% static 'blog/css/links_nav.css' %}"> 
-        <link rel="stylesheet" href="{% static 'blog/css/links_styles.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/link_styles.css' %}">
         <link rel="icon" type="image/png" href="{% static 'blog/img/cabin.svg' %}" class="logo"/>
         <title>Duygu Analizi | WordMixer</title>
     </head>
@@ -69,12 +69,14 @@
             <section class="main-content">
               <h2 class="mainT-title" >Duygu Analizi Nedir?</h2>
           <p>Duygu analizi, doğal dil işlemeyi kullanarak metnin olumsuz veya olumlu ifadesini inceler. <br>
-                Duygu analizini kullanabilmek için belge uygun bir dilbilgisi kuralına göre yazılmış olmalıdır.</p>
+                Duygu analizini kullanabilmek için metin uygun bir dilbilgisi kuralına göre yazılmış olmalıdır.</p>
               
             </section>
             <section class="sidebar" >
              <div class="side_container side_container--fit ">
                 <div class = "item-1">
+                </div>
+                <div class = "item-2">
                     <form class="input_text" method="POST" action="{% url 'da_sonuc'%}">
                         {% csrf_token %}
                         <label for="textarea"> 
@@ -88,46 +90,12 @@
                     <label >Sonuç </label>
                         <div class="outcome"> 
                             {% if response %}
-                                <p><strong>{{ response.result }}</strong></p>
+                                <p><strong>{{ response.result}}</strong></p> 
                             {% endif %}
                         </div>
-                </div>
-                <div class = "item-2">
-                    <h2>Ya da dosyalarınızı 
-                        <br> aktarıp daha fazla 
-                        <br>işlem gerçekleştirebilirsiniz.</h2>
                 </div> 
 
                 <div class = "item-3">
-                    <form class="upload" method="POST" novalidate enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="upload__info">
-                            {{ uf.file }} 
-                          <span class="upload__filename" ></span>
-                        </div>
-                        <button class="upload__button" name="file_button">
-                          <div class="upload__button__text" name="file_info">Yükle</div>
-                        </button>
-                        <div class="upload__hint">Yükleniyor...</div>
-                        <div class="upload__progress">
-                          <svg
-                            width="16"
-                            height="16"
-                            class="check"
-                            stroke="currentColor"
-                            fill="none"
-                            viewBox="0 0 13 11"
-                          >
-                            <polyline points="1 5.5 5 9.5 12 1.5"></polyline>
-                          </svg>
-                          Yüklendi
-                        </div>
-                            <div>
-                                {% for message in messages %}
-                                <p> {{message}} </p>
-                                {% endfor %}
-                            </div> 
-                    </form>
                 </div>
                  
              </div>

@@ -1,7 +1,4 @@
-
 from django.db.models import fields
-from .models import FileUpload
-from .forms import UploadFileForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
@@ -52,15 +49,7 @@ def logout (request):
     return redirect('/')
 
 def link1(request):
-    if request.method == "POST":
-        uf=UploadFileForm(request.POST,request.FILES)
-        if uf.is_valid():
-            uf = FileUpload(file = request.FILES['file'])
-            uf.user = request.user
-            uf.save()
-    else:
-        uf=UploadFileForm()
-    return render (request,'blog/links/Link1.html',{'uf': uf})
+    return render (request,'blog/links/Link1.html')
 
 def sentiment(request):
     url =  "http://localhost:1000/sentiment"

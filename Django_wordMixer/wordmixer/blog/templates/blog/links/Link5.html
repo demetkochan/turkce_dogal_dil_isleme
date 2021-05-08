@@ -10,7 +10,7 @@
         <script src="https://kit.fontawesome.com/64d58efce2.js"crossorigin="anonymous" ></script>
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="{% static 'blog/css/links_nav.css' %}"> 
-        <link rel="stylesheet" href="{% static 'blog/css/links_styles.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/link_styles.css' %}">
         <link rel="icon" type="image/png" href="{% static 'blog/img/cabin.svg' %}" class="logo"/>
         <title>Soru Cevaplama | WordMixer</title>
     </head>
@@ -76,53 +76,27 @@
             <section class="sidebar">
              <div class="side_container side_container--fit">
                 <div class = "item-1">
-                <form class="input_text" method="POST" action="{% url 'qa_sonuc'%}">
-                    {% csrf_token %}
-                    <label for="textarea"> 
-                        <i class="fas fa-pencil-alt prefix"></i>Soru Cevaplama
-                    </label> 
-                    <h2>Kendi Metniniz ile Test Edin...</h2>
-                    <textarea class="input" type="text" name="input_text"></textarea>
-                    <input  type="question" name="question">
-                    <br>
-                    <button type="submit" class="btn" name="submit" >Dene</button>
-                </form>  
-                <label >Sonuç </label>
-                    <div class="outcome"> 
-                        {% if response %}
-                            <p><strong>{{ response.result }}</strong></p>
-                        {% endif %}
-                    </div>
                 </div>
                 <div class = "item-2">
-                    <h2>Ya da dosyalarınızı 
-                        <br> aktarıp daha fazla 
-                        <br>işlem gerçekleştirebilirsiniz.</h2>
+                    <form class="input_text" method="POST" action="{% url 'qa_sonuc'%}">
+                        {% csrf_token %}
+                        <label for="textarea"> 
+                            <i class="fas fa-pencil-alt prefix"></i>Soru Cevaplama
+                        </label> 
+                        <h2>Kendi Metniniz ile Test Edin...</h2>
+                        <textarea class="input" type="text" name="input_text"></textarea>
+                        <input  class="basic_input" type="question" name="question">
+                        <br>
+                        <button type="submit" class="btn" name="submit" >Dene</button>
+                    </form>  
+                    <label >Sonuç </label>
+                        <div class="outcome"> 
+                            {% if response %}
+                                <p><strong>{{ response.result }}</strong></p>
+                            {% endif %}
+                        </div>
                 </div> 
-
                 <div class = "item-3">
-                    <div class="upload">
-                        <div class="upload__info">
-                          <span class="upload__filename">Örnek.csv</span>
-                        </div>
-                        <button class="upload__button">
-                          <div class="upload__button__text">Yükle</div>
-                        </button>
-                        <div class="upload__hint">Yükleniyor...</div>
-                        <div class="upload__progress">
-                          <svg
-                            width="16"
-                            height="16"
-                            class="check"
-                            stroke="currentColor"
-                            fill="none"
-                            viewBox="0 0 13 11"
-                          >
-                            <polyline points="1 5.5 5 9.5 12 1.5"></polyline>
-                          </svg>
-                          Yüklendi
-                        </div>
-                      </div>
                 </div> 
             </div>
             </section>
