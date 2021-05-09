@@ -13,8 +13,7 @@ nltk.download('punkt')
 @app.route('/keyword', methods=['GET', 'POST'])
 def get_prediction():
     text = request.json.get('text')
-    key_number1 = request.json.get('key_number')
-    key_number2 = int(key_number1)
+    key_number1 = int(request.json.get('key_number'))
     stop_words = get_stop_words('turkish')
 
     total_words = text.split()
@@ -48,7 +47,7 @@ def get_prediction():
 
     tf_idf_score = {key: tf_score[key] * idf_score.get(key, 0) for key in tf_score.keys()}
 
-    return jsonify(get_top_n(tf_idf_score, key_number2))
+    return jsonify(get_top_n(tf_idf_score, key_number1))
 
 def check_sent(word, sentences):
     final = [all([w in x for w in word]) for x in sentences]
