@@ -33,7 +33,7 @@
                     <ul class="nav__list">
                         <li class="nav__item"><a href="{% url 'anasayfa' %}" class="nav__link active">Anasayfa</a></li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">Hizmetler 
+                            <a href="#skills" class="nav__link">Hizmetler 
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                             </a>
                         <div class="dropdown">
@@ -76,31 +76,40 @@
             <section class="sidebar">
              <div class="side_container side_container--fit">
                 <div class = "item-1">
+                    <label for="card"> 
+                        <i class="fas fa-pencil-alt prefix"></i> Anahtar Kelime Çıkarımı
+                    </label> 
+                    <div class="property-card">
+                        <div class="property-description">
+                          <h3> Nasıl Kullanlır? </h3>
+                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class = "item-2">
                     <form class="input_text" method="POST" action="{% url 'ke_sonuc' %}">
                         {% csrf_token %}
-                    <label for="textarea"> 
-                        <i class="fas fa-pencil-alt prefix"></i> Anahtar Kelime Çıkarımı
-                    </label> 
-                    <h2>Kendi Metniniz ile Test Edin...</h2>
-                    <textarea class="input" type="text" name="input_text"></textarea>
-                    <input  class="basic_input" type="key_number" name="key_number">
+                        <div class="heading"> 
+                            Kendi Metniniz ile Test Edin... 
+                        </div> 
+                        <textarea class="input" type="text" name="input_text"></textarea>
+                        <div class="heading_2"> İstediğiniz anahtar kelime sayısını yazınız 
+                        </div>
+                        <input  class="basic_input" type="key_number" name="key_number">
+                            <button type="submit" class="btn" name="submit" >Dene</button>
+                    </form>
                     <br>
-                    <button type="submit" class="btn" name="submit" >Dene</button>
-                    <br>
-                    <label >Sonuç </label>
+                    <div class="heading">Sonuç </div>
                     <div class="outcome"> 
-                        <ul>
                         <h3>Kelime&#160;&#160;&#160;Geçme Oranı</h3>  
                         {% for key in response.items %} 
                             <li><a "{{ key }}">{{key}}</a></li>
                         {% endfor %}  
-                        </ul>
                     </div>
                 </div> 
 
                 <div class = "item-3">
+                    <img src="{% static 'blog/img/anahtarkelime_img.svg' %}"alt="" width="375" height="400">
                 </div> 
             </div>
             </section>

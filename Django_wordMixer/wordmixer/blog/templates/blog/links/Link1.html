@@ -67,27 +67,34 @@
         
         <main class="l-main">
             <section class="main-content">
-              <h2 class="mainT-title" >Duygu Analizi Nedir?</h2>
+              <h2 class="main-title" >Duygu Analizi Nedir?</h2>
           <p>Duygu analizi, doğal dil işlemeyi kullanarak metnin olumsuz veya olumlu ifadesini inceler. <br>
-                Duygu analizini kullanabilmek için metin uygun bir dilbilgisi kuralına göre yazılmış olmalıdır.</p>
-              
+                Duygu analizini kullanabilmek için metin uygun bir dilbilgisi kuralına göre yazılmış olmalıdır.</p> 
             </section>
             <section class="sidebar" >
              <div class="side_container side_container--fit ">
                 <div class = "item-1">
+                    <label for="card"> 
+                        <i class="fas fa-pencil-alt prefix"></i> Duygu Analizi 
+                    </label> 
+                    <div class="property-card">
+                        <div class="property-description">
+                          <h3> Nasıl Kullanlır? </h3>
+                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class = "item-2">
                     <form class="input_text" method="POST" action="{% url 'da_sonuc'%}">
                         {% csrf_token %}
-                        <label for="textarea"> 
-                            <i class="fas fa-pencil-alt prefix"></i> Duygu Analizi 
-                        </label> 
-                        <h2>Kendi Metniniz ile Test Edin...</h2>
+                        <div class="heading"> 
+                            Kendi Metniniz ile Test Edin...
+                        </div> 
                         <textarea class="input" type="text" name="input_text"></textarea>
                         <br>
                         <button type="submit" class="btn" name="submit" >Dene</button>
                     </form>  
-                    <label >Sonuç </label>
+                    <div class="heading">Sonuç </div>
                         <div class="outcome"> 
                             {% if response %}
                                 <p><strong>{{ response.result}}</strong></p> 
@@ -96,9 +103,8 @@
                 </div> 
 
                 <div class = "item-3">
+                        <img src="{% static 'blog/img/sentiment_img.svg' %}"alt="" width="375" height="400">
                 </div>
-                 
-             </div>
             </section>
         
           </main>
