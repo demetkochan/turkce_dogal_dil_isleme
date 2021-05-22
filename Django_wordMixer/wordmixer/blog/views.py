@@ -55,7 +55,9 @@ def sentiment(request):
     url =  "http://localhost:1000/sentiment"
     payload = {"text": request.POST["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
-    return render (request,'blog/links/Link1.html',{'response': response} )
+    return render (request,'blog/links/Link1.html',{'response': response,'payload': payload} )
+
+
 
 def link2(request):
     return render (request,'blog/links/Link2.html')
@@ -66,7 +68,7 @@ def keywordExtraction(request):
     key_number= request.POST["key_number"]
     payload = {"text":text, "key_number":key_number}
     response = json.loads(requests.request("POST", url, json=payload ).text)
-    return render (request,'blog/links/Link2.html',{'response': response} )
+    return render (request,'blog/links/Link2.html',{'response': response, 'payload': payload} )
 
 def link3(request):
     return render (request,'blog/links/Link3.html')
@@ -75,7 +77,7 @@ def summarization(request):
     url =  "http://localhost:3000/summarization"
     payload = {"text": request.POST["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
-    return render (request,'blog/links/Link3.html',{'response': response} )
+    return render (request,'blog/links/Link3.html',{'response': response, 'payload': payload} )
 
 def link4(request):
     return render (request,'blog/links/Link4.html')
@@ -84,7 +86,7 @@ def ner(request):
     url =  "http://localhost:4000/ner"
     payload = {"text": request.POST["input_text"]}
     response = json.loads(requests.request("POST", url, json=payload).text)
-    return render (request,'blog/links/Link4.html',{'response': response} ) 
+    return render (request,'blog/links/Link4.html',{'response': response,'payload': payload} ) 
 
 def link5(request):
     return render (request,'blog/links/Link5.html')
@@ -95,7 +97,7 @@ def questionAnswer(request):
         question= request.POST["question"]
         payload = {"text":text, "question":question} 
         response = json.loads(requests.request("POST", url, json=payload).text)
-        return render (request,'blog/links/Link5.html',{'response': response} )
+        return render (request,'blog/links/Link5.html',{'response': response,'payload': payload} )
 
 def link6(request):
     return render (request,'blog/links/Link6.html')
@@ -104,7 +106,7 @@ def categorization(request):
     url =  "http://localhost:6000/categorize"
     payload = {"text": request.POST["input_text"]}
     response = json.loads (requests.request("POST", url, json=payload).text)
-    return render (request,'blog/links/Link6.html',{'response': response} )
+    return render (request,'blog/links/Link6.html',{'response': response,'payload': payload} )
 
 
 

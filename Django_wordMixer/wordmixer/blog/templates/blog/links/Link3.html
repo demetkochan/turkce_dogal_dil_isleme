@@ -81,8 +81,21 @@
                     </label> 
                     <div class="property-card">
                         <div class="property-description">
-                          <h3> Nasıl Kullanlır? </h3>
-                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                          <h3> Nasıl Kullanılır? </h3>
+                          <p>
+                            Metni Türkçe olarak özetleyebilirsiniz. 
+                            <br> Bu özetleme modülü, içeriğinizi analiz etmek ve orijinalin özünü koruyan bir özet oluşturmak için istatistiksel algoritmalar, doğal dil işleme teknolojisi kullanır.
+                          </p>
+                          <h4>Örnek: 
+                            <br> ► Bir şeyi yok etmeden düzeltmeye alışmak da lazım. Başlanan bir şeye devam etmek ve onu bitirmek, insan iradesinin başarısıdır.
+                             Bunun zıddına biz, maymun iştahlılık deriz. Maymun iştahlı, mesela bir atkı örmeye başlar, bitirmeden başka bir işe geçer; 
+                             bir kitabı okumaya koyulur, sekiz on sayfa bile okumadan onu atar, bir diğerinin yapraklarını karıştırmak ister.
+                            <br>
+                             <br> Sonuç: Maymun iştahlı, mesela bir atkı örmeye başlar, bitirmeden başka bir işe geçer; 
+                            bir kitabı okumaya koyulur, sekiz on sayfa bile okumadan onu atar, bir diğerinin yapraklarını karıştırmak ister.</h4>
+                            <p> Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
+                                Kelime sınırı yoktur. İstediğiniz kadar yazabilirsiniz.☻
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -95,18 +108,25 @@
                         <textarea class="input" type="text" name="input_text"></textarea>
                         <br>
                         <button type="submit" class="btn" name="submit" >Dene</button>
+
+                        <div class="heading"> Girilen Metin </div>
+                        <p style="color:#2b2e4a;">
+                        <br> {{ payload.text }}
+                        </p>
                     </form>  
                     <div class="heading">Sonuç </div>
-                        <div class="outcome"> 
+                        <div class="outcome" style="color:#2b2e4a;" > 
                             {% if response %}
-                                <p><strong>{{ response.result}}</strong></p> 
+                                <p><strong>{{response}}</strong></p> 
                             {% endif %}
                         </div>
-                </div> 
+                </div>
                 <div class = "item-3">
                     <img src="{% static 'blog/img/özetleme_img.svg' %}"alt="" width="375" height="400">
+            
                 </div>
-            </section>
+            </div>
+         </section>
         
           </main>
         

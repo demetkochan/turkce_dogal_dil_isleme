@@ -81,8 +81,26 @@
                     </label> 
                     <div class="property-card">
                         <div class="property-description">
-                          <h3> Nasıl Kullanlır? </h3>
-                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                          <h3> Nasıl Kullanılır? </h3>
+                          <p>Anahtar kelimeleri Türkçe metinden çıkarabilirsiniz. 
+                            <br>Anahtar kelimeler bir veya daha fazla anahtar kelime, frekans çıkartılabiliyor. 
+                            <br>
+                            <br> Peki frekans ne demek?
+                            <br> Frekans kelimenin metindeki geçme sıklığını ifade eder.
+                            <br> İçeriğinizdeki önemli konular olarak tanımlanır ve verileri indekslemek, etiket bulutları oluşturmak veya arama yapmak için kullanılabilir.
+                        </p>  
+                          <h4>Örnek: 
+                          <br> ► Elon Musk, SpaceX tarafından tasarlanan uzay giysisinin bir fotoğrafını paylaştı. 
+                          <br> Bu, yeni tasarımın paylaşılan ikinci görselidir ve mekana tam vücut görünümüne uyan ilk görüntüdür.
+                          <br> ► 2 
+                          <br> Sonuç: <br> ('Elon', 0.028881132523331052)
+                                      <br> ('Musk,', 0.028881132523331052)</h4>
+                          <br>
+                          <p> 
+                              
+                            Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
+                              Kelime sınırı yoktur. İstediğiniz kadar yazabilirsiniz.☻
+                              </p>  
                         </div>
                     </div>
                 </div>
@@ -97,11 +115,18 @@
                         </div>
                         <input  class="basic_input" type="key_number" name="key_number">
                             <button type="submit" class="btn" name="submit" >Dene</button>
+
+                        <div class="heading">Girilen Metin</div> 
+                        <p style="color:#2b2e4a;">
+                        <br> {{ payload.text }}
+                        <br>
+                        <br> &#160;&#160; Girilen anahtar kelime sayısı:
+                        <br> &#160;&#160; {{ payload.key_number }} </p>
                     </form>
-                    <br>
+                    
                     <div class="heading">Sonuç </div>
-                    <div class="outcome"> 
-                        <h3>Kelime&#160;&#160;&#160;Geçme Oranı</h3>  
+                    <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 
+                        <h3>Kelime&#160;&#160;&#160;Frekans</h3>  
                         {% for key in response.items %} 
                             <li><a "{{ key }}">{{key}}</a></li>
                         {% endfor %}  

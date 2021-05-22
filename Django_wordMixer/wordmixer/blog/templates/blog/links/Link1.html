@@ -79,8 +79,18 @@
                     </label> 
                     <div class="property-card">
                         <div class="property-description">
-                          <h3> Nasıl Kullanlır? </h3>
-                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                          <h3> Nasıl Kullanılır? </h3>
+                          <p>Bu, Türkçe metinler için genel bir duygusal analiz sınıflandırıcısıdır. 
+                              <br> Her tür metinde harika çalışır.
+                              <br> Hangi duygu analizi sınıflandırıcısını kullanacağınızdan emin değilseniz, bunu kullanın.
+                              <br>
+                            </p>  
+                            <h4>Örnek: 
+                            <br> ► Bu site bir harika!
+                            <br> Sonuç: Pozitif</h4>
+                            <p> Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
+                                Kelime sınırı yoktur. İstediğiniz kadar yazabilirsiniz.☻
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -90,15 +100,18 @@
                         <div class="heading"> 
                             Kendi Metniniz ile Test Edin...
                         </div> 
-                        <textarea class="input" type="text" name="input_text"></textarea>
-                        <br>
-                        <button type="submit" class="btn" name="submit" >Dene</button>
+                        <div>
+                            <textarea class="input" type="text" name="input_text" ></textarea>
+                            <br>
+                            <button type="submit" class="btn" name="submit" >Dene</button> 
+                        </div>
+                        <div class="heading"> Girilen Metin </div>
+                            <p style="color:#2b2e4a; font-size: 20px;">&#160;&#160; {{ payload.text }}</p>
+                        
                     </form>  
-                    <div class="heading">Sonuç </div>
-                        <div class="outcome"> 
-                            {% if response %}
+                    <div class="heading"> Sonuç </div>
+                        <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 
                                 <p><strong>{{ response.result}}</strong></p> 
-                            {% endif %}
                         </div>
                 </div> 
 

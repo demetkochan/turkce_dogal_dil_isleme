@@ -101,6 +101,8 @@ html {
   box-sizing: border-box;
 }
 
+
+
 :root {
   --input-border: #8b8a8b;
   --input-focus-h: 2;
@@ -171,7 +173,6 @@ label {
   font-size: 1.5rem;
   text-decoration: underline;
   color: var(--first-color-dark);
-  padding: 1rem;
 }
 .heading_2{
   font-size: 1rem;
@@ -247,39 +248,30 @@ label {
 }
 .property-card
 {
-  height:24em;
   width:22em;
-  display:-webkit-box;
-  display:-ms-flexbox;
   display:flex;
   -webkit-box-orient:vertical;
   -webkit-box-direction:normal;
-  -ms-flex-direction:column;
   flex-direction:column;
   position:relative;
-  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-radius:10px;
   overflow:hidden;
-  -webkit-box-shadow:-2px -2px 22px #c4463dfd;
   box-shadow: -2px -2px 22px #c4463dfd;
 }
 
 .property-description
 {
   background-color: #ffffffbd;
-  height:24em;
   width:22em;
-  position:absolute;
-  bottom:0em;
-  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  padding: 0.1em 1em;
+  position:relative;
+  padding: 1em 1em;
   text-align:left;
 }
 .property-description > h3{
   text-align: center;
+  color: var(--first-color-darken);
+}
+
+.property-description > h4{
   color: var(--first-color-darken);
 }

@@ -82,7 +82,17 @@
                     <div class="property-card">
                         <div class="property-description">
                           <h3> Nasıl Kullanlır? </h3>
-                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                          <p>Soru Cevaplama modelleri tam olarak adının önerdiği şeyi yapar: 
+                              <br>bir metin paragrafı ve bir soru verildiğinde, model de paragrafta cevabı arar.</p>
+                              <h4>Örnek: 
+                                <br> ► Kardeşimle bahçede oynarken annemin bize seslendiğini duyduk. Mutfağa girdiğimizde bizi bir sürpriz bekliyordu. 
+                                <br> Annem yazın sıcağında serinlememiz için bize limonata yapmıştı. Kardeşimle ikişer bardak limonata içip serinledik.
+                                <br> ► Annesi ne yapmıştı?
+                                 <br> Sonuç:
+                                 <br> Limonata</h4>
+                                <p> Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
+                                    Kelime sınırı yoktur. İstediğiniz kadar yazabilirsiniz.☻
+                                    </p>
                         </div>
                     </div>
                 </div>
@@ -95,11 +105,16 @@
                         <textarea class="input" type="text" name="input_text"></textarea>
                         <div class="heading_2"> Metin ile ilgili sorunuzu yazınız
                         </div>
-                        <input  class="basic_input" type="key_number" name="key_number">
+                        <input  class="basic_input" type="question" name="question">
                             <button type="submit" class="btn" name="submit" >Dene</button>
+                        
+                        <div class="heading"> Girilen Metin </div>
+                        <p style="color:#2b2e4a;">
+                        <br> {{ payload.text }}
+                        <br> {{ payload.question }} </p>
                     </form>  
                     <div class="heading">Sonuç </div>
-                        <div class="outcome"> 
+                        <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 
                             {% if response %}
                                 <p><strong>{{ response.result }}</strong></p>
                             {% endif %}

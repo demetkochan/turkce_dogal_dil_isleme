@@ -81,7 +81,26 @@
                     <div class="property-card">
                         <div class="property-description">
                           <h3> Nasıl Kullanlır? </h3>
-                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                          <p>Adlandırılmış varlık tanıma, metindeki anahtar bilgileri (varlıkları) tanımlama ve kategorize etme görevidir.<br>
+                               <p style="text-decoration: underline; color:#c0281dfd;">Ad Varlık modelinin etiketleri:</p>
+                               B-PER: Kişi cümlenin başında yer alıyorsa veya kendinden önce başka gelen kişi yoksa B-PER etiketini alır. 
+                              <br> I-PER: Kişi cümlenin ortasında yer alıyorsa ve kendinden önce B-PER etiketini almış biri varsa I-PER etiketini alır.
+                              <br> B-LOC: Cümlede lokasyon bilgisi B-LOC etiketini alır.
+                              <br> B-ORG: İlk gelen kurum ve/veya kuruluş isimleri B-ORG etiketini alır.
+                              <br> I-ORG: Birden fazla gelen kurum ve/veya kuruluş isimleri varsa ya da kurum/kuruluş isimleri bir kelimeden fazlaysa I-ORG etiketini alır.
+                            </p>  
+                            <h4>Örnek: 
+                            <br> ► Ahmet Yılmaz, Beşiktaş Spor Kulübü'nde futbolcu ve İstanbul'da yaşıyor. 
+                            <br> Sonuç: 
+                            <br> ('Ahmet', 'B-PER'),
+                            ('Yılmaz', 'I-PER'),
+                            <br>('Beşiktaş', 'B-ORG'),
+                            ('Spor', 'I-ORG'),
+                            ('Kulübü', 'I-ORG'),
+                            ('İstanbul', 'B-LOC')</h4>
+                            <p> Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
+                                Kelime sınırı yoktur. İstediğiniz kadar yazabilirsiniz.☻
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -94,9 +113,13 @@
                         <textarea class="input" type="text" name="input_text"></textarea>
                         <br>
                         <button type="submit" class="btn" name="submit" >Dene</button>
+
+                        <div class="heading"> Girilen Metin </div>
+                        <p style="color:#2b2e4a;">
+                        <br> {{ payload.text }}</p>
                     </form>  
                     <div class="heading">Sonuç </div>
-                    <div class="outcome"> 
+                    <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 
                         <ul>
                             <h4>Ad/Varlık&#160;&#160;&#160;Tanım</h4>  
                             {% for key in response.items %}

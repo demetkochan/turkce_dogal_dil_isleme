@@ -82,7 +82,15 @@
                     <div class="property-card">
                         <div class="property-description">
                           <h3> Nasıl Kullanlır? </h3>
-                          <p>Lorem Ipsum Dipsum hortata. Mixcall Horcho. Mixwell Chingo. More Bingo. Lorem Ipum doth be hard.</p>
+                          <p> Girilen metinin bulunduğu kategoriyi gösterir.</p>
+                          <h4>Örnek: 
+                            <br> ► Elon Musk, SpaceX tarafından tasarlanan uzay giysisinin bir fotoğrafını paylaştı. 
+                            <br> Bu, yeni tasarımın paylaşılan ikinci görselidir ve mekana tam vücut görünümüne uyan ilk görüntüdür. 
+                             <br> Sonuç:
+                             <br> Teknoloji </h4>
+                            <p> Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
+                                Kelime sınırı yoktur. İstediğiniz kadar yazabilirsiniz.☻
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -92,12 +100,17 @@
                         <div class="heading"> 
                             Kendi Metniniz ile Test Edin...
                         </div> 
-                        <textarea class="input" type="text" name="input_text"></textarea>
+                        
+                        <br> <textarea class="input" type="text" name="input_text"></textarea>
                         <br>
                         <button type="submit" class="btn" name="submit" >Dene</button>
+
+                        <div class="heading"> Girilen Metin </div>
+                        <p style="color:#2b2e4a;">
+                        <br> {{ payload.text }} </p>
                     </form>  
                     <div class="heading">Sonuç </div>
-                        <div class="outcome"> 
+                        <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 
                             {% if response %}
                                 <p><strong>{{ response.result }}</strong></p>
                             {% endif %}
