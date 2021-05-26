@@ -110,13 +110,11 @@
                         <div class="heading"> 
                             Kendi Metniniz ile Test Edin...
                         </div> 
-                        <textarea class="input" type="text" name="input_text"></textarea>
+                        <br>
+                        <textarea class="input" type="text" name="input_text">{{ payload.text }}</textarea>
                         <br>
                         <button type="submit" class="btn" name="submit" >Dene</button>
 
-                        <div class="heading"> Girilen Metin </div>
-                        <p style="color:#2b2e4a;">
-                        <br> {{ payload.text }}</p>
                     </form>  
                     <div class="heading">Sonuç </div>
                     <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 

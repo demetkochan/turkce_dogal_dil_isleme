@@ -122,6 +122,11 @@ html {
   border: 2px solid var(--input-border);
   font-family: inherit;
 }
+
+textarea.basic_input{
+  resize:none;
+}
+
 .basic_input:focus {
   border-color: #ffdfb0 ;
   box-shadow: 0 0 0 3px

@@ -87,7 +87,7 @@
                             </p>  
                             <h4>Örnek: 
                             <br> ► Bu site bir harika!
-                            <br> Sonuç: Pozitif</h4>
+                            <br> Sonuç: Positive</h4>
                             <p> Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
                                 Kelime sınırı yoktur. İstediğiniz kadar yazabilirsiniz.☻
                                 </p>
@@ -101,13 +101,11 @@
                             Kendi Metniniz ile Test Edin...
                         </div> 
                         <div>
-                            <textarea class="input" type="text" name="input_text" ></textarea>
+                            <br>
+                            <textarea class="input" type="text" name="input_text" >{{ payload.text }}</textarea>
                             <br>
                             <button type="submit" class="btn" name="submit" >Dene</button> 
                         </div>
-                        <div class="heading"> Girilen Metin </div>
-                            <p style="color:#2b2e4a; font-size: 20px;">&#160;&#160; {{ payload.text }}</p>
-                        
                     </form>  
                     <div class="heading"> Sonuç </div>
                         <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 

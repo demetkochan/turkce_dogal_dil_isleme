@@ -85,7 +85,7 @@
                           <p> Girilen metinin bulunduğu kategoriyi gösterir.</p>
                           <h4>Örnek: 
                             <br> ► Elon Musk, SpaceX tarafından tasarlanan uzay giysisinin bir fotoğrafını paylaştı. 
-                            <br> Bu, yeni tasarımın paylaşılan ikinci görselidir ve mekana tam vücut görünümüne uyan ilk görüntüdür. 
+                            Bu, yeni tasarımın paylaşılan ikinci görselidir ve mekana tam vücut görünümüne uyan ilk görüntüdür. 
                              <br> Sonuç:
                              <br> Teknoloji </h4>
                             <p> Sizde üsteki kutucuğa kendi metninizi yazıp "Dene" tuşuna bastıktan sonra sonucunuzu görebilirsiniz.
@@ -101,13 +101,9 @@
                             Kendi Metniniz ile Test Edin...
                         </div> 
                         
-                        <br> <textarea class="input" type="text" name="input_text"></textarea>
+                        <br> <textarea class="input" type="text" name="input_text">{{ payload.text }}</textarea>
                         <br>
                         <button type="submit" class="btn" name="submit" >Dene</button>
-
-                        <div class="heading"> Girilen Metin </div>
-                        <p style="color:#2b2e4a;">
-                        <br> {{ payload.text }} </p>
                     </form>  
                     <div class="heading">Sonuç </div>
                         <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 

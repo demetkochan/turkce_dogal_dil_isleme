@@ -86,7 +86,7 @@
                               <br>bir metin paragrafı ve bir soru verildiğinde, model de paragrafta cevabı arar.</p>
                               <h4>Örnek: 
                                 <br> ► Kardeşimle bahçede oynarken annemin bize seslendiğini duyduk. Mutfağa girdiğimizde bizi bir sürpriz bekliyordu. 
-                                <br> Annem yazın sıcağında serinlememiz için bize limonata yapmıştı. Kardeşimle ikişer bardak limonata içip serinledik.
+                                 Annem yazın sıcağında serinlememiz için bize limonata yapmıştı. Kardeşimle ikişer bardak limonata içip serinledik.
                                 <br> ► Annesi ne yapmıştı?
                                  <br> Sonuç:
                                  <br> Limonata</h4>
@@ -101,17 +101,14 @@
                         {% csrf_token %}
                         <div class="heading"> 
                             Kendi Metniniz ile Test Edin... 
-                        </div> 
-                        <textarea class="input" type="text" name="input_text"></textarea>
+                        </div>
+                        <br>
+                        <textarea class="input" type="text" name="input_text">{{ payload.text }}</textarea>
                         <div class="heading_2"> Metin ile ilgili sorunuzu yazınız
                         </div>
-                        <input  class="basic_input" type="question" name="question">
+                        <textarea  class="basic_input" type="question" name="question">{{ payload.question }}</textarea>
                             <button type="submit" class="btn" name="submit" >Dene</button>
                         
-                        <div class="heading"> Girilen Metin </div>
-                        <p style="color:#2b2e4a;">
-                        <br> {{ payload.text }}
-                        <br> {{ payload.question }} </p>
                     </form>  
                     <div class="heading">Sonuç </div>
                         <div class="outcome" style="color:#2b2e4a; text-transform: capitalize;"> 

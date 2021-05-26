@@ -25,12 +25,11 @@
             <p> {{message}} </p>
             {% endfor %}
           </div>
+          
           <form action="#" method="POST" class="sign-in-form">
-            <h2 class="title"> WordMixer'a Hoşgeldin!</h2>
-            <br>
+            <img src="{% static 'blog/img/logo.svg' %}" class="sign-logo"  width="350" height="200">
               {% csrf_token %} 
             <h2 class="title">Giriş Yap</h2>
-
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="username" placeholder="Kullanıcı Adı" value="" id="load_username"/>
@@ -87,16 +86,16 @@
               
               <div class="mySlides">
                 <h3>NLP Tekniklerimiz</h3>
-                <p >*Duygu Analizi: Doğal dil işlemeyi kullanarak metnin olumsuz veya olumlu ifadesini inceler.
-                  <br>*Anahtar Kelime Çıkarımı: Metni en iyi tanımlayan kelimeyi ya da kelimleri çıkarır.
-                  <br>*Özetleme: Girilen metinin içindeki en önemli ve ya ilgili verileri ele alır ve bir özet oluşturur.</p>
+                <p >• Duygu Analizi: Doğal dil işlemeyi kullanarak metnin olumsuz veya olumlu ifadesini inceler.
+                  <br>• Anahtar Kelime Çıkarımı: Metni en iyi tanımlayan kelimeyi ya da kelimleri çıkarır.
+                  <br>• Özetleme: Girilen metinin içindeki en önemli ve ya ilgili verileri ele alır ve bir özet oluşturur.</p>
                 
               </div>
               
               <div class="mySlides">
-                <p>*Ad Varlık Tanıma: Metindeki belirli veri türlerini tanımlamak ve sınıflandırmak için kullanılır.
-                  <br>*Soru cevaplama: Girilen metin hakkında sorulan sorulara metin içinden cevap bulur.
-                  <br>*Konu modelleme: Girilen metnin anlamını belirlemek için kullanlır. </p>
+                <p>• Ad Varlık Tanıma: Metindeki belirli veri türlerini tanımlamak ve sınıflandırmak için kullanılır.
+                  <br>• Soru cevaplama: Girilen metin hakkında sorulan sorulara metin içinden cevap bulur.
+                  <br>• Konu modelleme: Girilen metnin anlamını belirlemek için kullanlır. </p>
               </div>
 
               <div class="mySlides">
@@ -111,7 +110,7 @@
                 Kayıt Ol
               </button>
           </div>
-          <img src="{% static 'blog/img/login.svg' %}" class="image" alt="" width="200" height="200" />
+          <img src="{% static 'blog/img/login.svg' %}" class="image" alt="" width="250" height="250" />
         </div>
         <!-- ===== RIGHT PANEL ===== -->
         <div class="panel right-panel">
@@ -124,7 +123,7 @@
               Giriş Yap
             </button>
           </div>
-          <img src="{% static 'blog/img/loving_it.svg' %}" class="image" alt="" width="300" height="300" />
+          <img src="{% static 'blog/img/loving_it.svg' %}" class="image" alt="" width="350" height="350" />
         </div>
       </div>
     </div>

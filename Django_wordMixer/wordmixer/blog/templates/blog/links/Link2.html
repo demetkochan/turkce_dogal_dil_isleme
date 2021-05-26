@@ -91,7 +91,7 @@
                         </p>  
                           <h4>Örnek: 
                           <br> ► Elon Musk, SpaceX tarafından tasarlanan uzay giysisinin bir fotoğrafını paylaştı. 
-                          <br> Bu, yeni tasarımın paylaşılan ikinci görselidir ve mekana tam vücut görünümüne uyan ilk görüntüdür.
+                          Bu, yeni tasarımın paylaşılan ikinci görselidir ve mekana tam vücut görünümüne uyan ilk görüntüdür.
                           <br> ► 2 
                           <br> Sonuç: <br> ('Elon', 0.028881132523331052)
                                       <br> ('Musk,', 0.028881132523331052)</h4>
@@ -109,19 +109,14 @@
                         {% csrf_token %}
                         <div class="heading"> 
                             Kendi Metniniz ile Test Edin... 
-                        </div> 
-                        <textarea class="input" type="text" name="input_text"></textarea>
+                        </div>
+                        <br> 
+                        <textarea class="input" type="text" name="input_text">{{ payload.text }}</textarea>
                         <div class="heading_2"> İstediğiniz anahtar kelime sayısını yazınız 
                         </div>
-                        <input  class="basic_input" type="key_number" name="key_number">
+                        <textarea  class="basic_input" type="key_number" name="key_number">{{ payload.key_number }}</textarea>
                             <button type="submit" class="btn" name="submit" >Dene</button>
 
-                        <div class="heading">Girilen Metin</div> 
-                        <p style="color:#2b2e4a;">
-                        <br> {{ payload.text }}
-                        <br>
-                        <br> &#160;&#160; Girilen anahtar kelime sayısı:
-                        <br> &#160;&#160; {{ payload.key_number }} </p>
                     </form>
                     
                     <div class="heading">Sonuç </div>
